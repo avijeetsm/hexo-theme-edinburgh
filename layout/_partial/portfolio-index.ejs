@@ -1,10 +1,18 @@
-<div class="col-md-6 col-12 mb-4">
-  <div class="hovereffect">
+<div 
+<% if(i%2==0) {%>
+class="col-12 mb-4 mt-4 row index-element"
+<% } else { %>
+  class="col-12 mb-4 mt-4 row index-element flex-md-row-reverse"
+<% } %>
+>
+  <div class="col-xs-12 col-md-6">
     <a href="<%- config.root %><%- item.path %>">
       <img class="img-fluid portfolio-img" src="<%- config.root %><%- item.cover_image || theme.default_cover_image %>" alt="<%- item.title || theme.default_post_title || "Untitled" %>">
-      <div class="overlay">
-        <span class="overlay-text"><%- item.title || theme.default_post_title || "Untitled" %></span>
-      </div>
     </a>
+  </div>
+  <div class="col-xs-12 col-md-6">
+    <div class="portfolio-date"><%- item.date.format('ll') %></div>
+    <div class="portfolio-title"><%- item.title || theme.default_post_title || "Untitled" %></div>
+    <div class="portfolio-readmore">Read More > ></div>
   </div>
 </div>

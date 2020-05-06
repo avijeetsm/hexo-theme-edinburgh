@@ -4,11 +4,13 @@
   <%- partial('_partial/head') %>
 
   <body>
-  	<div class="container-fluid navbar-container m-sm-5">
+  	<div class="container-fluid navbar-container">
       <!-- Header -->
-      <%- partial('_partial/header') %>
-
-  		<div class="row">
+      
+      <div id="main-background">
+        <%- partial('_partial/header') %>
+      </div>
+  		<div class="row listing">
   			<%- body %>
       </div>
       <% if (page.total > 1) { %>
